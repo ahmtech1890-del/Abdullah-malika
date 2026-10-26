@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Nikah Anniversary Abdullah & Malaika!</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #fff5f5 0%, #fed6e3 50%, #fecfef 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            color: #4a4a4a;
+            position: relative;
+        }
+
+        /* Floating background items (Rings, Hearts, Stars) */
+        .bg-element {
+            position: absolute;
+            color: rgba(212, 175, 55, 0.5);
+            animation: floatUp 5s linear infinite;
+            z-index: 1;
+            font-size: 24px;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg) scale(0.8); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-10vh) rotate(360deg) scale(1.2); opacity: 0; }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 45px 35px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(184, 134, 11, 0.15), 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 2px solid #f3e5ab;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            animation: popIn 0.9s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            position: relative;
+            z-index: 2;
+            margin: 20px 0;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .bismillah {
+            font-size: 1.4rem;
+            color: #c5a059;
+            margin-bottom: 15px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        .icon-header {
+            font-size: 55px;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        h1 {
+            color: #8b0032;
+            font-size: 1.9rem;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .couple-names {
+            font-size: 1.5rem;
+            color: #d4af37;
+            font-weight: bold;
+            margin-bottom: 18px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #d4af37, #f3e5ab, #d4af37);
+            background-size: 200% auto;
+            color: #5a3e00;
+            border: none;
+            padding: 14px 32px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn:hover {
+            background-position: right center;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Golden & Pink Confetti */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: -10px;
+            border-radius: 50%;
+            animation: fall 3.5s linear infinite;
+            z-index: 3;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Background Elements -->
+    <div class="bg-element" style="left: 10%; animation-delay: 0s;">💍</div>
+    <div class="bg-element" style="left: 25%; animation-delay: 1.8s;">🤍</div>
+    <div class="bg-element" style="left: 45%; animation-delay: 0.5s;">✨</div>
+    <div class="bg-element" style="left: 65%; animation-delay: 2.5s;">🌙</div>
+    <div class="bg-element" style="left: 85%; animation-delay: 1.2s;">💍</div>
+
+    <div class="card">
+        <div class="bismillah">‎بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+        <div class="icon-header">💍✨</div>
+        <h1>Happy Nikah Anniversary</h1>
+        <div class="couple-names">Dear Abdullah & Malaika ❤️</div>
+        <p>May Allah (SWT) bless your marriage with endless love, happiness, peace, and togetherness forever in this world and in Jannah!</p>
+        <button class="btn" onclick="celebrate()">Celebrate Blessing! 🎉</button>
+    </div>
+
+    <script>
+        function celebrate() {
+            alert(`🎉 Happy Nikah Anniversary to Dear Abdullah & Malaika! May Allah always keep you both happy and blessed together! 🤲❤️💍`);
+            createConfetti();
+        }
+
+        function createConfetti() {
+            const colors = ['#d4af37', '#f3e5ab', '#ffb6c1', '#ff69b4', '#ffffff', '#e6c200'];
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = (Math.random() * 2 + 2.5) + 's';
+                document.body.appendChild(confetti);
+
+                setTimeout(() => confetti.remove(), 4500);
+            }
+        }
+    </script>
+</body>
+</html>
